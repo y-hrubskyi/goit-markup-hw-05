@@ -77,22 +77,6 @@ img {
   /* outline: 1px solid tomato; */
 }
 
-.site-nav-link.current {
-  color: var(--active-color);
-}
-
-.site-nav-link.current::after {
-  content: '';
-  width: 100%;
-  height: 4px;
-
-  position: absolute;
-  bottom: -1px;
-
-  background: #404bbf;
-  border-radius: 2px;
-}
-
 .button {
   font-style: normal;
   font-weight: 500;
@@ -188,20 +172,35 @@ img {
   gap: 40px;
 }
 
-.site-nav-list-item {
-  position: relative;
-}
-
 .site-nav-link {
+  position: relative;
+
   display: flex;
 
   font-weight: 500;
   font-size: 16px;
   line-height: 1.5;
   letter-spacing: 0.02em;
+
   color: var(--secondary-text-color);
 
   transition: color var(--transition-duration) var(--transition-timing-func);
+}
+
+.site-nav-link.current {
+  color: var(--active-color);
+}
+
+.site-nav-link.current::after {
+  content: '';
+  width: 100%;
+  height: 4px;
+
+  position: absolute;
+  bottom: -1px;
+
+  background: #404bbf;
+  border-radius: 2px;
 }
 
 .site-nav-link:hover,
@@ -445,8 +444,9 @@ img {
   border: 1px solid #8e8f99;
   border-radius: 4px;
 
-  transition: color var(--transition-duration) var(--transition-timing-func),
-    border-color var(--transition-duration) var(--transition-timing-func);
+  transition: border-color var(--transition-duration)
+      var(--transition-timing-func),
+    color var(--transition-duration) var(--transition-timing-func);
 }
 
 .customer-icon {
@@ -632,7 +632,7 @@ img {
 
   transition: color var(--transition-duration) var(--transition-timing-func),
     background-color var(--transition-duration) var(--transition-timing-func),
-    border var(--transition-duration) var(--transition-timing-func),
+    border-color var(--transition-duration) var(--transition-timing-func),
     box-shadow var(--transition-duration) var(--transition-timing-func);
 }
 
