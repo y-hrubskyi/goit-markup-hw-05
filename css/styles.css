@@ -12,6 +12,9 @@
   --primary-bg-color: #ffffff;
   --secondary-bg-color: #f4f4fd;
   --hero-and-footer-bg-color: #2e2f42;
+
+  --transition-duration: 250ms;
+  --transition-timing-func: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 body {
@@ -169,16 +172,18 @@ img {
   gap: 40px;
 }
 
-.site-nav-list .link {
+.site-nav-link {
   font-weight: 500;
   font-size: 16px;
   line-height: 1.5;
   letter-spacing: 0.02em;
   color: var(--secondary-text-color);
+
+  transition: color var(--transition-duration) var(--transition-timing-func);
 }
 
-.site-nav-list .link:hover,
-.site-nav-list .link:focus {
+.site-nav-link:hover,
+.site-nav-link:focus {
   color: var(--active-color);
 }
 
@@ -194,15 +199,17 @@ img {
   gap: 40px;
 }
 
-.contacts .link {
+.contacts-link {
   font-size: 16px;
   line-height: 1.5;
   letter-spacing: 0.02em;
   color: inherit;
+
+  transition: color var(--transition-duration) var(--transition-timing-func);
 }
 
-.contacts .link:hover,
-.contacts .link:focus {
+.contacts-link:hover,
+.contacts-link:focus {
   color: var(--active-color);
 }
 
@@ -249,11 +256,14 @@ img {
 
   color: var(--hero-text-color);
   background-color: var(--accent-color);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+
+  transition: background-color var(--transition-duration)
+    var(--transition-timing-func);
 }
 
 .button.primary:hover,
 .button.primary:focus {
-  color: var(--hero-text-color);
   background-color: var(--active-color);
 }
 
@@ -371,6 +381,9 @@ img {
   border-radius: 50%;
   color: #f4f4fd;
   background-color: var(--accent-color);
+
+  transition: background-color var(--transition-duration)
+    var(--transition-timing-func);
 }
 
 .social-icon {
@@ -409,6 +422,9 @@ img {
   color: #8e8f99;
   border: 1px solid #8e8f99;
   border-radius: 4px;
+
+  transition: color var(--transition-duration) var(--transition-timing-func),
+    border-color var(--transition-duration) var(--transition-timing-func);
 }
 
 .customer-icon {
@@ -487,6 +503,9 @@ img {
   border-radius: 50%;
   color: #f4f4fd;
   background-color: var(--accent-color);
+
+  transition: background-color var(--transition-duration)
+    var(--transition-timing-func);
 }
 
 .social-media-icon {
@@ -521,6 +540,11 @@ img {
   color: var(--accent-color);
   background-color: var(--secondary-bg-color);
   border: 1px solid #e7e9fc;
+
+  transition: color var(--transition-duration) var(--transition-timing-func),
+    background-color var(--transition-duration) var(--transition-timing-func),
+    border var(--transition-duration) var(--transition-timing-func),
+    box-shadow var(--transition-duration) var(--transition-timing-func);
 }
 
 .filter-list .button:hover,
@@ -554,6 +578,9 @@ img {
 .project-link {
   display: block;
   color: inherit;
+
+  transition: box-shadow var(--transition-duration)
+    var(--transition-timing-func);
 }
 
 .project-link:hover,
